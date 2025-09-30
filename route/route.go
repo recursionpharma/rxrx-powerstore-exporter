@@ -18,16 +18,18 @@ package route
 
 import (
 	"fmt"
-	"powerstore-metrics-exporter/collector/client"
-	"powerstore-metrics-exporter/collector/generalCollector"
-	"powerstore-metrics-exporter/utils"
-	"strconv"
-
 	"github.com/gin-gonic/gin"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/robfig/cron/v3"
+	"powerstore-metrics-exporter/collector/bulkClient"
+	"powerstore-metrics-exporter/collector/client"
+	"powerstore-metrics-exporter/collector/generalCollector"
+	"powerstore-metrics-exporter/utils"
+	"strconv"
+	"time"
 )
 
 func Run(config *utils.Config, logger log.Logger) {
@@ -37,11 +39,55 @@ func Run(config *utils.Config, logger log.Logger) {
 	for _, storage := range config.StorageList {
 		client, err := client.NewClient(storage, logger)
 		if err != nil {
-			level.Error(logger).Log("msg", "init Powerstore client error", "err", err, "ip", storage.Ip)
+			level.Error(logger).Log("msg", "init PowerStore client error", "err", err, "ip", storage.Ip)
 		}
 
+		var bc = &bulkClient.BulkClient{
+			IsEnable: false,
+		}
+		if storage.Bulk {
+			bc.IsEnable = true
+			bc, err = bulkClient.NewBulkClient(storage, config.Exporter.BulkDir, logger)
+			if err != nil {
+				level.Error(logger).Log("msg", "init PowerStore bulk client error", "err", err, "ip", storage.Ip)
+			}
+			err = bc.BulkEnable()
+			if err != nil {
+				level.Error(logger).Log("msg", "failed to enable batch request api", "err", err, "ip", storage.Ip)
+			}
+			// It takes at least one minute to start the API by opening the BULK API
+			level.Info(logger).Log("msg", "The bulk api is starting...", "ip", storage.Ip)
+			time.Sleep(60 * time.Second)
+			level.Info(logger).Log("msg", "The bulk api startup is completed", "ip", storage.Ip)
+			// Initialize download bulk api data
+			if err := bc.DownloadBulkData(); err != nil {
+				level.Error(logger).Log("msg", "error downloading batch data", "err", err, "ip", storage.Ip)
+			}
+			// Add timed tasks and download bulk API data regularly
+			c := cron.New()
+			var bulkCron string
+			if config.Exporter.BulkCron == "" {
+				bulkCron = "*/5 * * * *"
+			} else {
+				bulkCron = config.Exporter.BulkCron
+			}
+			_, err = c.AddFunc(bulkCron, func() {
+				level.Info(logger).Log("msg", "Start a scheduled task", "ip", storage.Ip)
+				if err := bc.DownloadBulkData(); err != nil {
+					level.Error(logger).Log("msg", "error downloading batch data", "err", err, "ip", storage.Ip)
+				}
+			})
+			if err != nil {
+				level.Error(logger).Log("msg", "task addition failed", "err", err, "ip", storage.Ip)
+			} else {
+				// Start collecting bulk API data regularly
+				c.Start()
+			}
+		}
+		// Initialize the corresponding relationship between each component id and component name
 		client.InitModuleID(logger)
 
+		// Generate the registry for each component collector
 		ClusterRegistry := prometheus.NewPedanticRegistry()
 		PortRegistry := prometheus.NewPedanticRegistry()
 		FileSystemRegistry := prometheus.NewPedanticRegistry()
@@ -52,23 +98,25 @@ func Run(config *utils.Config, logger log.Logger) {
 		VolumeGroupRegistry := prometheus.NewPedanticRegistry()
 		CapacityRegistry := prometheus.NewPedanticRegistry()
 
+		// The collector that registers each component in the registry
 		ClusterRegistry.MustRegister(generalCollector.NewClusterCollector(client, logger))
 		PortRegistry.MustRegister(generalCollector.NewPortCollector(client, logger))
-		PortRegistry.MustRegister(generalCollector.NewMetricFcPortCollector(client, logger))
-		PortRegistry.MustRegister(generalCollector.NewMetricEthPortCollector(client, logger))
 		FileSystemRegistry.MustRegister(generalCollector.NewFileCollector(client, logger))
-		FileSystemRegistry.MustRegister(generalCollector.NewMetricFilesystemCollector(client, logger))
 		HardwareRegistry.MustRegister(generalCollector.NewHardwareCollector(client, logger))
-		HardwareRegistry.MustRegister(generalCollector.NewWearMetricCollector(client, logger))
 		VolumeRegistry.MustRegister(generalCollector.NewVolumeCollector(client, logger))
-		VolumeRegistry.MustRegister(generalCollector.NewMetricVolumeCollector(client, logger))
 		ApplianceRegistry.MustRegister(generalCollector.NewApplianceCollector(client, logger))
-		ApplianceRegistry.MustRegister(generalCollector.NewMetricApplianceCollector(client, logger))
 		NasRegistry.MustRegister(generalCollector.NewNasCollector(client, logger))
-		NasRegistry.MustRegister(generalCollector.NewMetricNasCollector(client, logger))
 		VolumeGroupRegistry.MustRegister(generalCollector.NewVolumeGroupCollector(client, logger))
-		VolumeGroupRegistry.MustRegister(generalCollector.NewMetricVgCollector(client, logger))
 		CapacityRegistry.MustRegister(generalCollector.NewCapacityCollector(client, logger))
+		// Performance data
+		ApplianceRegistry.MustRegister(generalCollector.NewMetricApplianceCollector(client, bc, logger))
+		PortRegistry.MustRegister(generalCollector.NewMetricFcPortCollector(client, bc, logger))
+		PortRegistry.MustRegister(generalCollector.NewMetricEthPortCollector(client, bc, logger))
+		NasRegistry.MustRegister(generalCollector.NewMetricNasCollector(client, bc, logger))
+		FileSystemRegistry.MustRegister(generalCollector.NewMetricFilesystemCollector(client, bc, logger))
+		VolumeRegistry.MustRegister(generalCollector.NewMetricVolumeCollector(client, bc, logger))
+		VolumeGroupRegistry.MustRegister(generalCollector.NewMetricVgCollector(client, bc, logger))
+		HardwareRegistry.MustRegister(generalCollector.NewWearMetricCollector(client, bc, logger))
 
 		metricsGroup := r.Group(fmt.Sprintf("/metrics/%s", storage.Ip))
 		{
@@ -93,9 +141,20 @@ func Run(config *utils.Config, logger log.Logger) {
 
 	httpPort := fmt.Sprintf(":%s", strconv.Itoa(config.Exporter.Port))
 	level.Info(logger).Log("msg", "~~~~~~~~~~~~~Start PowerStore Exporter~~~~~~~~~~~~~~")
-	level.Info(logger).Log("http-port", httpPort)
-	err := r.Run(httpPort)
-	if err != nil {
-		level.Error(logger).Log("msg", "Service startup failed", "err", err)
+	level.Info(logger).Log("http-port", httpPort, "https", config.Exporter.Https.Enable)
+	// Determine whether https is enabled
+	if config.Exporter.Https.Enable {
+		if config.Exporter.Https.CrtPath == "" || config.Exporter.Https.KeyPath == "" {
+			level.Error(logger).Log("msg", "certificate missing", "crt", config.Exporter.Https.CrtPath, "key", config.Exporter.Https.KeyPath)
+		}
+		err := r.RunTLS(httpPort, config.Exporter.Https.CrtPath, config.Exporter.Https.KeyPath)
+		if err != nil {
+			level.Error(logger).Log("msg", "Service startup failed", "err", err)
+		}
+	} else {
+		err := r.Run(httpPort)
+		if err != nil {
+			level.Error(logger).Log("msg", "Service startup failed", "err", err)
+		}
 	}
 }

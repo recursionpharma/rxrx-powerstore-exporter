@@ -21,6 +21,10 @@ import (
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/tidwall/gjson"
+<<<<<<< HEAD
+	"powerstore-metrics-exporter/collector/bulkClient"
+=======
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -69,6 +73,23 @@ var metricMetricFilesystemDescMap = map[string]string{
 }
 
 type metricFilesystemCollector struct {
+<<<<<<< HEAD
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
+}
+
+func NewMetricFilesystemCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricFilesystemCollector {
+	metrics := getMetricFilesystemMetrics(api.IP)
+	return &metricFilesystemCollector{
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
+=======
 	client  *client.Client
 	metrics map[string]*prometheus.Desc
 	logger  log.Logger
@@ -80,12 +101,61 @@ func NewMetricFilesystemCollector(api *client.Client, logger log.Logger) *metric
 		client:  api,
 		metrics: metrics,
 		logger:  logger,
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 	}
 }
 
 func (c *metricFilesystemCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting filesystem performance data")
 	startTime := time.Now()
+<<<<<<< HEAD
+	if c.isEnableBulk {
+		filesystemArray := client.PowerstoreModuleID[c.client.IP]
+		filesystemData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByFileSystem")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get filesystem performance data error", "err", err)
+		}
+		filesystemDataJson := gjson.Parse(filesystemData)
+		for _, data := range filesystemDataJson.Array() {
+			filesystemID := data.Get("file_system_id").String()
+			filesystemName := filesystemArray["filesystem"][filesystemID]
+			for _, metricName := range metricFilesystemCollectorMetric {
+				metricValue := data.Get(metricName)
+				metricDesc := c.metrics["filesystem"+"_"+metricName]
+				if metricValue.Exists() && metricValue.Type != gjson.Null {
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), filesystemName.String())
+				}
+			}
+		}
+	} else {
+		var wg sync.WaitGroup
+		fileSystemArray := client.PowerstoreModuleID[c.client.IP]
+		for filesystemId, filesystemName := range fileSystemArray["filesystem"] {
+			wg.Add(1)
+			go func(filesystemId, filesystemName string) {
+				defer wg.Done()
+				filesystemData, err := c.client.GetMetricsFilesystem(filesystemId)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get filesystem performance data error", "err", err)
+					return
+				}
+				filesystemArray := gjson.Parse(filesystemData).Array()
+				if len(filesystemArray) == 0 {
+					level.Warn(c.logger).Log("msg", "get filesystem performance data is null")
+					return
+				}
+				for _, metricName := range metricFilesystemCollectorMetric {
+					metricValue := filesystemArray[len(filesystemArray)-1].Get(metricName)
+					metricDesc := c.metrics["filesystem"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), filesystemName)
+					}
+				}
+			}(filesystemId, filesystemName.String())
+		}
+		wg.Wait()
+	}
+=======
 	var wg sync.WaitGroup
 	fileSystemArray := client.PowerstoreModuleID[c.client.IP]
 	for filesystemId, filesystemName := range fileSystemArray["filesystem"] {
@@ -113,6 +183,7 @@ func (c *metricFilesystemCollector) Collect(ch chan<- prometheus.Metric) {
 		}(filesystemId, filesystemName.String())
 	}
 	wg.Wait()
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 	level.Info(c.logger).Log("msg", "Obtaining the performance filesystem is successful", "time", time.Since(startTime))
 }
 
@@ -129,14 +200,22 @@ func getMetricFilesystemMetrics(ip string) map[string]*prometheus.Desc {
 		res["filesystem"+"_"+metricName] = prometheus.NewDesc(
 			"powerstore_metricFilesystem_"+metricName,
 			getMetricFilesystemDescByType(metricName),
+<<<<<<< HEAD
+			[]string{"name"},
+=======
 			[]string{"name", "appliance_id"},
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 			prometheus.Labels{"IP": ip})
 	}
 	return res
 }
 
 func getMetricFilesystemDescByType(key string) string {
+<<<<<<< HEAD
+	if v, ok := metricMetricFilesystemDescMap[key]; ok {
+=======
 	if v, ok := metricMetricFcPortDescMap[key]; ok {
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 		return v
 	} else {
 		return key

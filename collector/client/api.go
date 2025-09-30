@@ -294,13 +294,13 @@ func (c *Client) InitModuleID(logger log.Logger) {
 
 	nasIdToName, err := c.GetNasId()
 	if err != nil {
-		level.Error(logger).Log("msg", "Init nas server id list error", "err", err, "ip", c.IP)
+		level.Error(logger).Log("msg", "Init nas https id list error", "err", err, "ip", c.IP)
 	}
 	ModuleIdToNameMap["nas"] = resultToMap(nasIdToName)
 
 	filesystemIdToName, err := c.GetFilesystemId()
 	if err != nil {
-		level.Error(logger).Log("msg", "Init filesystem server id list error", "err", err, "ip", c.IP)
+		level.Error(logger).Log("msg", "Init filesystem https id list error", "err", err, "ip", c.IP)
 	}
 	ModuleIdToNameMap["filesystem"] = resultToMap(filesystemIdToName)
 	PowerstoreModuleID[c.IP] = ModuleIdToNameMap

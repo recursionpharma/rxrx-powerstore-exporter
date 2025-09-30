@@ -1268,7 +1268,7 @@ zabbix_export:
           uuid: 427084951c7249d089f4add540a745d3
           name: 'Nas Server Discovery'
           type: DEPENDENT
-          key: powerstore.nas.server.discovery
+          key: powerstore.nas.https.discovery
           delay: '0'
           item_prototypes:
             -
@@ -2590,7 +2590,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2614,7 +2614,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2638,7 +2638,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2662,7 +2662,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2686,7 +2686,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2710,7 +2710,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2734,7 +2734,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2758,7 +2758,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2782,7 +2782,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2810,7 +2810,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2838,7 +2838,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'
@@ -2866,7 +2866,7 @@ zabbix_export:
               tags:
                 -
                   tag: Application
-                  value: 'performance nas server'
+                  value: 'performance nas https'
                 -
                   tag: Application
                   value: '{#NAS_ID}'

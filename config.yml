@@ -1,19 +1,40 @@
 exporter:
+  # port：PowerStore exporter port number
   port: 9010
+  # reqLimit：The number of times the PowerStore exporter makes requests to the PowerStore manager api at the same time
   reqLimit: 200
+  # bulkDir：PowerStore exporter requests the data storage directory after the data obtained by the PowerStore manager bulk api
+  bulkDir: ./bulk/
+  # bulkCron：PowerStore exporter requests from PowerStore manager bulk API regularly
+  bulkCron: "*/5 * * * *"
+  https:
+    # https.enable: enableDoes PowerStore exporter need to enable https access
+    enable: false
+    # https.crtPath & https.keyPath:The certificate path used by https of PowerStore exporter
+    crtPath: ./https/https.crt
+    keyPath: ./https/https.key
 log:
-  # type is [logfmt or json]
+  # type：PowerStore exporter log type, optionally logfmt or json
   type: logfmt
+  # path: PowerStore exporter log output file
   path: ./powerstoreExporter.out.log
+  # level: Minimum log level printed by PowerStore exporter
   level: info
 storageList:
+    # ip: The IP address of PowerStore manager API
   - ip: 10.0.0.1
+    # user: Login users of PowerStore manager api
     user: your-first-powerstore-username
+    # password：Password of the user logged in with PowerStore Manager API
     password: your-first-powerstore-password
-    apiVersion: v1
+    apiVersion: v3
+    # apiLimit：The maximum number of components output per output by PowerStore Manger API
     apiLimit: 5000
+    # bulkCollector：Whether to enable PowerStore manager bulk api to collect data
+    bulkCollector: false
   - ip: 10.0.0.2
     user: your-second-powerstore-username
     password: your-second-powerstore-password
     apiVersion: v1
     apiLimit: 5000
+    bulkCollector: false

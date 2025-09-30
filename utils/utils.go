@@ -40,11 +40,21 @@ type Storage struct {
 	Password string `yaml:"password"`
 	Version  string `yaml:"apiVersion"`
 	Limit    int    `yaml:"apiLimit"`
+	Bulk     bool   `yaml:"bulkCollector"`
 }
 
 type Exporter struct {
-	Port     int `yaml:"port"`
-	ReqLimit int `yaml:"reqLimit"`
+	Port     int    `yaml:"port"`
+	ReqLimit int    `yaml:"reqLimit"`
+	BulkDir  string `yaml:"bulkDir"`
+	BulkCron string `yaml:"bulkCron"`
+	Https    HTTPS  `yaml:"https"`
+}
+
+type HTTPS struct {
+	Enable  bool   `yaml:"enable"`
+	CrtPath string `yaml:"crtPath"`
+	KeyPath string `yaml:"keyPath"`
 }
 
 type Logs struct {

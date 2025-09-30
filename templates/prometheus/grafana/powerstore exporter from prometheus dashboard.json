@@ -24,14 +24,23 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+<<<<<<< HEAD
+  "id": 19,
+  "links": [],
+=======
   "id": 10,
   "links": [],
   "liveNow": false,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -40,7 +49,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -48,8 +63,12 @@
             "mode": "absolute",
             "steps": [
               {
+<<<<<<< HEAD
+                "color": "green"
+=======
                 "color": "green",
                 "value": null
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           },
@@ -83,8 +102,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background-solid"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "custom.width",
@@ -107,8 +134,16 @@
                 "value": 100
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "gradient-gauge"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "unit",
@@ -149,8 +184,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           },
@@ -176,8 +219,16 @@
                 "value": "percent"
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "gradient-gauge"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "min",
@@ -199,7 +250,13 @@
       },
       "id": 2,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -209,12 +266,20 @@
         "showHeader": true,
         "sortBy": []
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -229,7 +294,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -244,7 +313,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -259,7 +332,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -274,7 +351,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -289,7 +370,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -304,7 +389,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -319,7 +408,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -334,7 +427,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -418,7 +515,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -426,11 +527,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -439,6 +548,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -460,8 +573,12 @@
             "mode": "absolute",
             "steps": [
               {
+<<<<<<< HEAD
+                "color": "green"
+=======
                 "color": "green",
                 "value": null
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "color": "red",
@@ -488,15 +605,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -513,7 +642,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -521,11 +654,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -534,6 +675,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -555,8 +700,12 @@
             "mode": "absolute",
             "steps": [
               {
+<<<<<<< HEAD
+                "color": "green"
+=======
                 "color": "green",
                 "value": null
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "color": "red",
@@ -583,15 +732,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -609,7 +770,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -617,11 +782,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -630,6 +803,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -651,8 +828,12 @@
             "mode": "absolute",
             "steps": [
               {
+<<<<<<< HEAD
+                "color": "green"
+=======
                 "color": "green",
                 "value": null
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "color": "red",
@@ -679,15 +860,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -705,7 +898,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -713,11 +910,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -726,6 +931,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -747,8 +956,12 @@
             "mode": "absolute",
             "steps": [
               {
+<<<<<<< HEAD
+                "color": "green"
+=======
                 "color": "green",
                 "value": null
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "color": "red",
@@ -775,15 +988,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -814,7 +1039,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -822,11 +1051,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -835,6 +1072,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -883,15 +1124,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -908,7 +1161,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -916,11 +1173,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -929,6 +1194,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -977,15 +1246,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1002,7 +1283,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1010,11 +1295,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1023,6 +1316,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1071,15 +1368,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1096,7 +1405,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1105,7 +1418,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -1146,8 +1465,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           }
@@ -1161,7 +1488,13 @@
       },
       "id": 34,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -1171,12 +1504,20 @@
         "frameIndex": 0,
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1190,7 +1531,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1205,7 +1550,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1220,7 +1569,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1235,7 +1588,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1250,11 +1607,19 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_metricFcPort_avg_invalid_crc_count_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+=======
             "uid": "jU5gl8iSz"
           },
           "editorMode": "code",
           "exemplar": false,
           "expr": "powerstore_metricFcPort_invalid_crc_count_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "format": "table",
           "hide": false,
           "instant": true,
@@ -1265,7 +1630,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1280,7 +1649,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1351,7 +1724,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1360,7 +1737,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -1401,8 +1784,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           }
@@ -1416,7 +1807,13 @@
       },
       "id": 22,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -1426,12 +1823,20 @@
         "frameIndex": 0,
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1445,7 +1850,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1460,7 +1869,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1475,7 +1888,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1490,7 +1907,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1505,11 +1926,19 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_metricEthPort_avg_pkt_tx_error_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+=======
             "uid": "jU5gl8iSz"
           },
           "editorMode": "code",
           "exemplar": false,
           "expr": "powerstore_metricEthPort_pkt_tx_error_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "format": "table",
           "hide": false,
           "instant": true,
@@ -1520,11 +1949,19 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_metricEthPort_avg_pkt_tx_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+=======
             "uid": "jU5gl8iSz"
           },
           "editorMode": "code",
           "exemplar": false,
           "expr": "powerstore_metricEthPort_pkt_tx_ps{IP=\"$IP\",appliance_id=\"$Appliance\"}",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "format": "table",
           "hide": false,
           "instant": true,
@@ -1535,7 +1972,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1586,6 +2027,10 @@
               "eth_port_id": 0
             },
             "renameByName": {
+<<<<<<< HEAD
+              "Time": "",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               "Value": "Volume Size",
               "Value #A": "bytes_rx_ps",
               "Value #B": "bytes_tx_ps",
@@ -1618,7 +2063,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1626,11 +2075,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1639,6 +2096,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1683,15 +2144,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVolume_avg_latency{IP=\"$IP\", appliance_id=\"$Appliance\"} * 0.001",
@@ -1706,7 +2179,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1714,11 +2191,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1727,6 +2212,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1771,15 +2260,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVolume_avg_write_bandwidth{IP=\"$IP\",appliance_id=\"$Appliance\"} + powerstore_metricVolume_avg_read_bandwidth{IP=\"$IP\",appliance_id=\"$Appliance\"}",
@@ -1795,7 +2296,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1803,11 +2308,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1816,6 +2329,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1864,15 +2381,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1890,7 +2419,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1898,11 +2431,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1911,6 +2452,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -1959,15 +2504,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1985,7 +2542,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -1994,7 +2555,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -2047,8 +2614,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background-solid"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "custom.width",
@@ -2079,8 +2654,16 @@
                 "value": "percent"
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "gradient-gauge"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "min",
@@ -2108,7 +2691,13 @@
       },
       "id": 6,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -2118,12 +2707,20 @@
         "frameIndex": 0,
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2137,7 +2734,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2152,7 +2753,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2167,7 +2772,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2239,7 +2848,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2247,11 +2860,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2260,6 +2881,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -2308,15 +2933,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVg_avg_latency{IP=\"$IP\"} * 0.001",
@@ -2331,7 +2968,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2339,11 +2980,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2352,6 +3001,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -2400,15 +3053,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVg_avg_total_bandwidth{IP=\"$IP\"}",
@@ -2423,7 +3088,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2431,11 +3100,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "hue",
@@ -2444,6 +3121,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -2492,15 +3173,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVg_avg_total_iops{IP=\"$IP\"}",
@@ -2515,7 +3208,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2523,11 +3220,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "hue",
@@ -2536,6 +3241,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -2584,15 +3293,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricVg_avg_io_size{IP=\"$IP\"}",
@@ -2607,7 +3328,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2616,7 +3341,13 @@
           },
           "custom": {
             "align": "auto",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -2665,8 +3396,16 @@
             },
             "properties": [
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "gradient-gauge"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "unit",
@@ -2702,7 +3441,13 @@
       },
       "id": 58,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -2711,12 +3456,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2730,7 +3483,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2745,7 +3502,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2809,7 +3570,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -2818,7 +3583,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -2859,8 +3630,16 @@
                 ]
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           },
@@ -2887,8 +3666,16 @@
                 "value": "percent"
               },
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "gradient-gauge"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "min",
@@ -2910,7 +3697,13 @@
       },
       "id": 4,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -2919,12 +3712,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2939,7 +3740,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2954,7 +3759,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3013,7 +3822,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3022,7 +3835,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -3043,8 +3862,16 @@
             },
             "properties": [
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               }
             ]
           }
@@ -3058,7 +3885,13 @@
       },
       "id": 50,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -3067,12 +3900,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3128,7 +3969,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3137,7 +3982,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -3158,8 +4009,16 @@
             },
             "properties": [
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "mappings",
@@ -3193,7 +4052,13 @@
       },
       "id": 49,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -3202,12 +4067,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3260,7 +4133,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3269,7 +4146,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -3290,8 +4173,16 @@
             },
             "properties": [
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "mappings",
@@ -3325,7 +4216,13 @@
       },
       "id": 48,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -3334,12 +4231,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3392,7 +4297,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3401,7 +4310,13 @@
           },
           "custom": {
             "align": "center",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -3422,8 +4337,16 @@
             },
             "properties": [
               {
+<<<<<<< HEAD
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+=======
                 "id": "custom.displayMode",
                 "value": "color-background"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
               },
               {
                 "id": "mappings",
@@ -3457,7 +4380,13 @@
       },
       "id": 47,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -3466,12 +4395,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3537,7 +4474,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3545,11 +4486,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3558,6 +4507,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -3602,15 +4555,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "single",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricFilesystem_avg_latency{IP=\"$IP\",appliance_id=\"$Appliance\"}",
@@ -3625,7 +4590,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3633,11 +4602,19 @@
             "mode": "palette-classic"
           },
           "custom": {
+<<<<<<< HEAD
+            "axisBorderShow": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+<<<<<<< HEAD
+            "barWidthFactor": 0.6,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3646,6 +4623,10 @@
               "tooltip": false,
               "viz": false
             },
+<<<<<<< HEAD
+            "insertNulls": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -3694,15 +4675,27 @@
           "showLegend": false
         },
         "tooltip": {
+<<<<<<< HEAD
+          "hideZeros": false,
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "mode": "multi",
           "sort": "none"
         }
       },
+<<<<<<< HEAD
+      "pluginVersion": "11.6.5",
+=======
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3720,7 +4713,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3797,7 +4794,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -3815,7 +4816,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3888,7 +4893,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "expr": "powerstore_metricFilesystem_avg_total_bandwidth{IP=\"$IP\",appliance_id=\"$Appliance\"}",
@@ -3904,7 +4913,11 @@
     {
       "datasource": {
         "type": "prometheus",
+<<<<<<< HEAD
+        "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
         "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       },
       "fieldConfig": {
         "defaults": {
@@ -3913,7 +4926,13 @@
           },
           "custom": {
             "align": "left",
+<<<<<<< HEAD
+            "cellOptions": {
+              "type": "auto"
+            },
+=======
             "displayMode": "auto",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
             "inspect": false
           },
           "mappings": [],
@@ -3977,7 +4996,13 @@
       },
       "id": 60,
       "options": {
+<<<<<<< HEAD
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
+=======
+        "footer": {
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "fields": "",
           "reducer": [
             "sum"
@@ -3986,12 +5011,20 @@
         },
         "showHeader": true
       },
+<<<<<<< HEAD
+      "pluginVersion": "9.5.2",
+=======
       "pluginVersion": "9.3.8",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -4005,7 +5038,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -4020,7 +5057,11 @@
         {
           "datasource": {
             "type": "prometheus",
+<<<<<<< HEAD
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+=======
             "uid": "jU5gl8iSz"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           },
           "editorMode": "code",
           "exemplar": false,
@@ -4071,14 +5112,31 @@
       "type": "table"
     }
   ],
+<<<<<<< HEAD
+  "preload": false,
+  "refresh": "5s",
+  "schemaVersion": 41,
+=======
   "refresh": "5s",
   "schemaVersion": 37,
   "style": "dark",
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
+<<<<<<< HEAD
+          "text": "172.16.3.41",
+          "value": "172.16.3.41"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+        },
+        "definition": "label_values(powerstore_cluster{},IP)",
+        "includeAll": false,
+=======
           "selected": false,
           "text": "172.16.200.51",
           "value": "172.16.200.51"
@@ -4091,6 +5149,7 @@
         "hide": 0,
         "includeAll": false,
         "multi": false,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
         "name": "IP",
         "options": [],
         "query": {
@@ -4099,24 +5158,37 @@
         },
         "refresh": 1,
         "regex": "",
+<<<<<<< HEAD
+=======
         "skipUrlSync": false,
         "sort": 0,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
         "type": "query"
       },
       {
         "current": {
+<<<<<<< HEAD
+=======
           "selected": false,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
           "text": "A1",
           "value": "A1"
         },
         "datasource": {
           "type": "prometheus",
+<<<<<<< HEAD
+          "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+        },
+        "definition": "label_values(powerstore_appliance{},appliance_id)",
+        "includeAll": false,
+=======
           "uid": "jU5gl8iSz"
         },
         "definition": "label_values(powerstore_appliance{},appliance_id)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
         "name": "Appliance",
         "options": [],
         "query": {
@@ -4125,20 +5197,32 @@
         },
         "refresh": 1,
         "regex": "",
+<<<<<<< HEAD
+=======
         "skipUrlSync": false,
         "sort": 0,
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
         "type": "query"
       }
     ]
   },
   "time": {
+<<<<<<< HEAD
+    "from": "2025-09-25T08:33:24.892Z",
+    "to": "2025-09-25T13:23:50.102Z"
+=======
     "from": "now-6h",
     "to": "now"
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
   },
   "timepicker": {},
   "timezone": "",
   "title": "powerstore exporter from prometheus dashboard",
   "uid": "vt4jLZnSk2",
+<<<<<<< HEAD
+  "version": 3
+=======
   "version": 23,
   "weekStart": ""
+>>>>>>> a511a7e (Update Powerstore Version & Optimize collection)
 }

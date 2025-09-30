@@ -17,6 +17,7 @@
 package generalCollector
 
 import (
+	"powerstore-metrics-exporter/collector/bulkClient"
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -58,51 +59,76 @@ var metricMetricFcPortDescMap = map[string]string{
 }
 
 type metricFcPortCollector struct {
-	client  *client.Client
-	metrics map[string]*prometheus.Desc
-	logger  log.Logger
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
 }
 
-func NewMetricFcPortCollector(api *client.Client, logger log.Logger) *metricFcPortCollector {
+func NewMetricFcPortCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricFcPortCollector {
 	metrics := getMetricFcPortMetrics(api.IP)
 	return &metricFcPortCollector{
-		client:  api,
-		metrics: metrics,
-		logger:  logger,
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
 	}
 }
 
 func (c *metricFcPortCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting fcPort performance data")
 	startTime := time.Now()
-	var wg sync.WaitGroup
-	fcPortArray := client.PowerstoreModuleID[c.client.IP]
-	for portId, portName := range fcPortArray["fcport"] {
-		wg.Add(1)
-		go func(portId, portName string) {
-			defer wg.Done()
-			fcPortsData, err := c.client.GetMetricFcPort(portId)
-			if err != nil {
-				level.Warn(c.logger).Log("msg", "get fcPort performance data error", "err", err)
-				return
-			}
-			fcPortDataArray := gjson.Parse(fcPortsData).Array()
-			if len(fcPortDataArray) == 0 {
-				level.Warn(c.logger).Log("msg", "get fcPort performance data is null")
-				return
-			}
-			fcPortData := fcPortDataArray[len(fcPortDataArray)-1]
-			applianceID := fcPortData.Get("appliance_id").String()
+	if c.isEnableBulk {
+		fcPortArray := client.PowerstoreModuleID[c.client.IP]
+		fcPortData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByFeFcPort")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get fc port performance data error", "err", err)
+		}
+		ethDataJson := gjson.Parse(fcPortData)
+		for _, data := range ethDataJson.Array() {
+			applianceID := data.Get("appliance_id").String()
+			fcPortID := data.Get("fe_port_id").String()
+			fcPortName := fcPortArray["fcport"][fcPortID]
 			for _, metricName := range metricFcPortCollectorMetric {
-				metricValue := fcPortData.Get(metricName)
+				metricValue := data.Get(metricName)
 				metricDesc := c.metrics["fcport"+"_"+metricName]
 				if metricValue.Exists() && metricValue.Type != gjson.Null {
-					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), portName, applianceID)
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), fcPortName.String(), applianceID)
 				}
 			}
-		}(portId, portName.String())
+		}
+	} else {
+		var wg sync.WaitGroup
+		fcPortArray := client.PowerstoreModuleID[c.client.IP]
+		for portId, portName := range fcPortArray["fcport"] {
+			wg.Add(1)
+			go func(portId, portName string) {
+				defer wg.Done()
+				fcPortsData, err := c.client.GetMetricFcPort(portId)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get fcPort performance data error", "err", err)
+					return
+				}
+				fcPortDataArray := gjson.Parse(fcPortsData).Array()
+				if len(fcPortDataArray) == 0 {
+					level.Warn(c.logger).Log("msg", "get fcPort performance data is null")
+					return
+				}
+				fcPortData := fcPortDataArray[len(fcPortDataArray)-1]
+				applianceID := fcPortData.Get("appliance_id").String()
+				for _, metricName := range metricFcPortCollectorMetric {
+					metricValue := fcPortData.Get(metricName)
+					metricDesc := c.metrics["fcport"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), portName, applianceID)
+					}
+				}
+			}(portId, portName.String())
+		}
+		wg.Wait()
 	}
-	wg.Wait()
 	level.Info(c.logger).Log("msg", "Obtaining the performance fc port is successful", "time", time.Since(startTime))
 }
 

@@ -18,6 +18,7 @@ package utils
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"io"
@@ -70,4 +71,10 @@ func GetLogger(loglevel, logPath, logfmt string) log.Logger {
 		"caller", log.DefaultCaller,
 	)
 	return logger
+}
+
+func GinLogger() gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+	}
 }

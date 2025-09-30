@@ -21,6 +21,10 @@ import (
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/tidwall/gjson"
+<<<<<<< HEAD
+	"powerstore-metrics-exporter/collector/bulkClient"
+=======
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -57,6 +61,23 @@ var metricMetricNasDescMap = map[string]string{
 }
 
 type metricNasCollector struct {
+<<<<<<< HEAD
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
+}
+
+func NewMetricNasCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricNasCollector {
+	metrics := getMetricNasMetrics(api.IP)
+	return &metricNasCollector{
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
+=======
 	client  *client.Client
 	metrics map[string]*prometheus.Desc
 	logger  log.Logger
@@ -68,10 +89,63 @@ func NewMetricNasCollector(api *client.Client, logger log.Logger) *metricNasColl
 		client:  api,
 		metrics: metrics,
 		logger:  logger,
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 	}
 }
 
 func (c *metricNasCollector) Collect(ch chan<- prometheus.Metric) {
+<<<<<<< HEAD
+	level.Info(c.logger).Log("msg", "Start collecting nas https performance data")
+	startTime := time.Now()
+	if c.isEnableBulk {
+		nasArray := client.PowerstoreModuleID[c.client.IP]
+		nasData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByNasServer")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get nas https performance data error", "err", err)
+		}
+		nasDataJson := gjson.Parse(nasData)
+		for _, data := range nasDataJson.Array() {
+			nasID := data.Get("nas_server_id").String()
+			nasName := nasArray["nas"][nasID]
+			for _, metricName := range metricNasCollectorMetric {
+				metricValue := data.Get(metricName)
+				metricDesc := c.metrics["nas"+"_"+metricName]
+				if metricValue.Exists() && metricValue.Type != gjson.Null {
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), nasName.String())
+				}
+			}
+		}
+	} else {
+		var wg sync.WaitGroup
+		nasArray := client.PowerstoreModuleID[c.client.IP]
+		for nasId, nasName := range nasArray["nas"] {
+			wg.Add(1)
+			go func(nasId, nasName string) {
+				defer wg.Done()
+				metricNasData, err := c.client.GetMetricByNas(nasId)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get nas https performance data error", "err", err)
+					return
+				}
+				nasDataArray := gjson.Parse(metricNasData).Array()
+				if len(nasDataArray) == 0 {
+					level.Warn(c.logger).Log("msg", "get nas https performance data is null")
+					return
+				}
+				nasData := nasDataArray[len(nasDataArray)-1]
+				for _, metricName := range metricVgCollectorMetric {
+					metricValue := nasData.Get(metricName)
+					metricDesc := c.metrics["nas"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), nasName)
+					}
+				}
+			}(nasId, nasName.String())
+		}
+		wg.Wait()
+	}
+	level.Info(c.logger).Log("msg", "Obtaining the performance nas https is successful", "time", time.Since(startTime))
+=======
 	level.Info(c.logger).Log("msg", "Start collecting nas server performance data")
 	startTime := time.Now()
 	var wg sync.WaitGroup
@@ -103,6 +177,7 @@ func (c *metricNasCollector) Collect(ch chan<- prometheus.Metric) {
 	}
 	wg.Wait()
 	level.Info(c.logger).Log("msg", "Obtaining the performance nas server is successful", "time", time.Since(startTime))
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 }
 
 func (c *metricNasCollector) Describe(ch chan<- *prometheus.Desc) {
@@ -113,7 +188,11 @@ func (c *metricNasCollector) Describe(ch chan<- *prometheus.Desc) {
 
 func getMetricNasMetrics(ip string) map[string]*prometheus.Desc {
 	res := map[string]*prometheus.Desc{}
+<<<<<<< HEAD
+	for _, metricName := range metricNasCollectorMetric {
+=======
 	for _, metricName := range metricVgCollectorMetric {
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 		res["nas"+"_"+metricName] = prometheus.NewDesc(
 			"powerstore_metricNas_"+metricName,
 			getMetricNasDescByType(metricName),
@@ -124,7 +203,11 @@ func getMetricNasMetrics(ip string) map[string]*prometheus.Desc {
 }
 
 func getMetricNasDescByType(key string) string {
+<<<<<<< HEAD
+	if v, ok := metricMetricNasDescMap[key]; ok {
+=======
 	if v, ok := metricMetricVgDescMap[key]; ok {
+>>>>>>> 695fa0e (Update Powerstore Version & Optimize collection)
 		return v
 	} else {
 		return key

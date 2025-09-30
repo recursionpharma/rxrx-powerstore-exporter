@@ -39,7 +39,7 @@ scrape_configs:
           - 127.0.0.1:9010
   - job_name: powerstore_10.0.0.1_file
     honor_timestamps: true
-    scrape_interval: 15m
+    scrape_interval: 5m
     scrape_timeout: 3m
     metrics_path: /metrics/10.0.0.1/file
     scheme: http
@@ -79,7 +79,7 @@ scrape_configs:
           - 127.0.0.1:9010
   - job_name: powerstore_10.0.0.1_nas
     honor_timestamps: true
-    scrape_interval: 15m
+    scrape_interval: 5m
     scrape_timeout: 3m
     metrics_path: /metrics/10.0.0.1/nas
     scheme: http

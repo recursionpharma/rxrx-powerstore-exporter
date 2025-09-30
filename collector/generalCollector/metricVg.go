@@ -17,6 +17,7 @@
 package generalCollector
 
 import (
+	"powerstore-metrics-exporter/collector/bulkClient"
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -58,50 +59,74 @@ var metricMetricVgDescMap = map[string]string{
 }
 
 type metricVgCollector struct {
-	client  *client.Client
-	metrics map[string]*prometheus.Desc
-	logger  log.Logger
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
 }
 
-func NewMetricVgCollector(api *client.Client, logger log.Logger) *metricVgCollector {
+func NewMetricVgCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricVgCollector {
 	metrics := getMetricVgfMetrics(api.IP)
 	return &metricVgCollector{
-		client:  api,
-		metrics: metrics,
-		logger:  logger,
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
 	}
 }
 
 func (c *metricVgCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting volume group performance data")
 	startTime := time.Now()
-	var wg sync.WaitGroup
-	vgArray := client.PowerstoreModuleID[c.client.IP]
-	for vgId, vgName := range vgArray["volumegroup"] {
-		wg.Add(1)
-		go func(vgId, vgName string) {
-			defer wg.Done()
-			metricVgData, err := c.client.GetMetricVg(vgId)
-			if err != nil {
-				level.Warn(c.logger).Log("msg", "get volume group performance data error", "err", err)
-				return
-			}
-			vgDataArray := gjson.Parse(metricVgData).Array()
-			if len(vgDataArray) == 0 {
-				level.Warn(c.logger).Log("msg", "get volume group performance data is null")
-				return
-			}
-			vgData := vgDataArray[len(vgDataArray)-1]
+	if c.isEnableBulk {
+		volumeGroupArray := client.PowerstoreModuleID[c.client.IP]
+		volumeGroupData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByVg")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get volume group performance data error", "err", err)
+		}
+		volumeGroupDataJson := gjson.Parse(volumeGroupData)
+		for _, data := range volumeGroupDataJson.Array() {
+			volumeGroupID := data.Get("vg_id").String()
+			volumeGroupName := volumeGroupArray["volumegroup"][volumeGroupID]
 			for _, metricName := range metricVgCollectorMetric {
-				metricValue := vgData.Get(metricName)
+				metricValue := data.Get(metricName)
 				metricDesc := c.metrics["vg"+"_"+metricName]
 				if metricValue.Exists() && metricValue.Type != gjson.Null {
-					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), vgName)
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), volumeGroupName.String())
 				}
 			}
-		}(vgId, vgName.String())
+		}
+	} else {
+		var wg sync.WaitGroup
+		vgArray := client.PowerstoreModuleID[c.client.IP]
+		for vgId, vgName := range vgArray["volumegroup"] {
+			wg.Add(1)
+			go func(vgId, vgName string) {
+				defer wg.Done()
+				metricVgData, err := c.client.GetMetricVg(vgId)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get volume group performance data error", "err", err)
+					return
+				}
+				vgDataArray := gjson.Parse(metricVgData).Array()
+				if len(vgDataArray) == 0 {
+					level.Warn(c.logger).Log("msg", "get volume group performance data is null")
+					return
+				}
+				vgData := vgDataArray[len(vgDataArray)-1]
+				for _, metricName := range metricVgCollectorMetric {
+					metricValue := vgData.Get(metricName)
+					metricDesc := c.metrics["vg"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), vgName)
+					}
+				}
+			}(vgId, vgName.String())
+		}
+		wg.Wait()
 	}
-	wg.Wait()
 	level.Info(c.logger).Log("msg", "Obtaining the performance volume group is successful", "time", time.Since(startTime))
 }
 

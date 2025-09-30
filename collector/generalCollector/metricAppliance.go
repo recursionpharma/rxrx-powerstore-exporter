@@ -17,6 +17,7 @@
 package generalCollector
 
 import (
+	"powerstore-metrics-exporter/collector/bulkClient"
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -61,45 +62,69 @@ var metricAppliancePerfDescMap = map[string]string{
 }
 
 type metricApplianceCollector struct {
-	client  *client.Client
-	metrics map[string]*prometheus.Desc
-	logger  log.Logger
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
 }
 
-func NewMetricApplianceCollector(api *client.Client, logger log.Logger) *metricApplianceCollector {
+func NewMetricApplianceCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricApplianceCollector {
 	metrics := getMetricApplianceMetrics(api.IP)
 	return &metricApplianceCollector{
-		client:  api,
-		metrics: metrics,
-		logger:  logger,
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
 	}
 }
 
 func (c *metricApplianceCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting appliance performance data")
 	startTime := time.Now()
-	var wg sync.WaitGroup
-	applianceArray := client.PowerstoreModuleID[c.client.IP]
-	for applianceID, applianceName := range applianceArray["appliance"] {
-		wg.Add(1)
-		go func(applianceID, applianceName string) {
-			defer wg.Done()
-			perfData, err := c.client.GetPerf(applianceID)
-			if err != nil {
-				level.Warn(c.logger).Log("msg", "get appliance performance data error", "err", err)
-			}
-			appliancePerformanceArray := gjson.Parse(perfData).Array()
-			appliancePerformance := appliancePerformanceArray[len(appliancePerformanceArray)-1]
+	if c.isEnableBulk {
+		applianceArray := client.PowerstoreModuleID[c.client.IP]
+		applianceData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByAppliance")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get appliance performance data error", "err", err)
+		}
+		applianceDataJson := gjson.Parse(applianceData)
+		for _, data := range applianceDataJson.Array() {
+			applianceID := data.Get("appliance_id").String()
+			applianceName := applianceArray["appliance"][applianceID]
 			for _, metricName := range metricAppliancePerfCollectorMetric {
-				metricValue := appliancePerformance.Get(metricName)
+				metricValue := data.Get(metricName)
 				metricDesc := c.metrics["appliance"+"_"+metricName]
 				if metricValue.Exists() && metricValue.Type != gjson.Null {
-					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), applianceID, applianceName)
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), applianceID, applianceName.String())
 				}
 			}
-		}(applianceID, applianceName.String())
+		}
+	} else {
+		var wg sync.WaitGroup
+		applianceArray := client.PowerstoreModuleID[c.client.IP]
+		for applianceID, applianceName := range applianceArray["appliance"] {
+			wg.Add(1)
+			go func(applianceID, applianceName string) {
+				defer wg.Done()
+				perfData, err := c.client.GetPerf(applianceID)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get appliance performance data error", "err", err)
+				}
+				appliancePerformanceArray := gjson.Parse(perfData).Array()
+				appliancePerformance := appliancePerformanceArray[len(appliancePerformanceArray)-1]
+				for _, metricName := range metricAppliancePerfCollectorMetric {
+					metricValue := appliancePerformance.Get(metricName)
+					metricDesc := c.metrics["appliance"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), applianceID, applianceName)
+					}
+				}
+			}(applianceID, applianceName.String())
+		}
+		wg.Wait()
 	}
-	wg.Wait()
 	level.Info(c.logger).Log("msg", "Obtaining the performance appliance is successful", "time", time.Since(startTime))
 }
 

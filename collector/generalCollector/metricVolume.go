@@ -17,6 +17,7 @@
 package generalCollector
 
 import (
+	"powerstore-metrics-exporter/collector/bulkClient"
 	"powerstore-metrics-exporter/collector/client"
 	"sync"
 	"time"
@@ -58,51 +59,79 @@ var metricMetricVolumeDescMap = map[string]string{
 }
 
 type metricVolumeCollector struct {
-	client  *client.Client
-	metrics map[string]*prometheus.Desc
-	logger  log.Logger
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
 }
 
-func NewMetricVolumeCollector(api *client.Client, logger log.Logger) *metricVolumeCollector {
+func NewMetricVolumeCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *metricVolumeCollector {
 	metrics := getMetricVolumeMetrics(api.IP)
 	return &metricVolumeCollector{
-		client:  api,
-		metrics: metrics,
-		logger:  logger,
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
 	}
 }
 
 func (c *metricVolumeCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting volume performance data")
 	startTime := time.Now()
-	var wg sync.WaitGroup
-	volumeArray := client.PowerstoreModuleID[c.client.IP]
-	for volumeId, volumeName := range volumeArray["volume"] {
-		wg.Add(1)
-		go func(volumeId, volumeName string) {
-			defer wg.Done()
-			metricVolData, err := c.client.GetMetricVolume(volumeId)
-			if err != nil {
-				level.Warn(c.logger).Log("msg", "get volume performance data error", "err", err)
-				return
+	if c.isEnableBulk {
+		volumeArray := client.PowerstoreModuleID[c.client.IP]
+		volumeData, err := c.bulkClient.ReadCsvData("PerformanceMetricsByVolume")
+		if err != nil {
+			level.Warn(c.logger).Log("msg", "get volume performance data error", "err", err)
+		}
+		volumeDataJson := gjson.Parse(volumeData)
+		for _, data := range volumeDataJson.Array() {
+			applianceID := data.Get("appliance_id").String()
+			volumeID := data.Get("volume_id").String()
+			volumeName := volumeArray["volume"][volumeID]
+			if volumeName.String() == "" {
+				continue
 			}
-			volumeDataArray := gjson.Parse(metricVolData).Array()
-			if len(volumeDataArray) == 0 {
-				level.Warn(c.logger).Log("msg", "get volume performance data is null")
-				return
-			}
-			volumeData := volumeDataArray[len(volumeDataArray)-1]
-			applianceID := volumeData.Get("appliance_id").String()
 			for _, metricName := range metricVolumeCollectorMetric {
-				metricValue := volumeData.Get(metricName)
+				metricValue := data.Get(metricName)
 				metricDesc := c.metrics["volume"+"_"+metricName]
 				if metricValue.Exists() && metricValue.Type != gjson.Null {
-					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), volumeName, applianceID)
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), volumeName.String(), applianceID)
 				}
 			}
-		}(volumeId, volumeName.String())
+		}
+	} else {
+		var wg sync.WaitGroup
+		volumeArray := client.PowerstoreModuleID[c.client.IP]
+		for volumeId, volumeName := range volumeArray["volume"] {
+			wg.Add(1)
+			go func(volumeId, volumeName string) {
+				defer wg.Done()
+				metricVolData, err := c.client.GetMetricVolume(volumeId)
+				if err != nil {
+					level.Warn(c.logger).Log("msg", "get volume performance data error", "err", err)
+					return
+				}
+				volumeDataArray := gjson.Parse(metricVolData).Array()
+				if len(volumeDataArray) == 0 {
+					level.Warn(c.logger).Log("msg", "get volume performance data is null")
+					return
+				}
+				volumeData := volumeDataArray[len(volumeDataArray)-1]
+				applianceID := volumeData.Get("appliance_id").String()
+				for _, metricName := range metricVolumeCollectorMetric {
+					metricValue := volumeData.Get(metricName)
+					metricDesc := c.metrics["volume"+"_"+metricName]
+					if metricValue.Exists() && metricValue.Type != gjson.Null {
+						ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), volumeName, applianceID)
+					}
+				}
+			}(volumeId, volumeName.String())
+		}
+		wg.Wait()
 	}
-	wg.Wait()
 	level.Info(c.logger).Log("msg", "Obtaining the performance volume is successful", "time", time.Since(startTime))
 }
 

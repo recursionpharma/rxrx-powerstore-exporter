@@ -31,7 +31,7 @@ var statuNasMetricsMap = map[string]map[string]int{
 }
 
 var metricNasDescMap = map[string]string{
-	"operational_status": "NAS server operational status,Started is 1 other is 0",
+	"operational_status": "NAS https operational status,Started is 1 other is 0",
 }
 
 type nasCollector struct {
@@ -50,7 +50,7 @@ func NewNasCollector(api *client.Client, logger log.Logger) *nasCollector {
 }
 
 func (c *nasCollector) Collect(ch chan<- prometheus.Metric) {
-	level.Info(c.logger).Log("msg", "Start collecting nas server data")
+	level.Info(c.logger).Log("msg", "Start collecting nas https data")
 	startTime := time.Now()
 	nasData, err := c.client.GetNas()
 	if err != nil {
@@ -66,7 +66,7 @@ func (c *nasCollector) Collect(ch chan<- prometheus.Metric) {
 			ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, value, name)
 		}
 	}
-	level.Info(c.logger).Log("msg", "Obtaining the nas server is successful", "time", time.Since(startTime))
+	level.Info(c.logger).Log("msg", "Obtaining the nas https is successful", "time", time.Since(startTime))
 }
 
 func getNasFloatData(key string, value gjson.Result) float64 {
