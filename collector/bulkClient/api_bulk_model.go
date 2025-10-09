@@ -1,3 +1,19 @@
+/*
+ Copyright (c) 2024-2025 Dell Inc. or its subsidiaries. All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
 package bulkClient
 
 type PerformanceMetricsByAppliance struct {
@@ -248,6 +264,23 @@ type SpaceMetricsByAppliance struct {
 	DataReduction      float64 `csv:"data_reduction" json:"data_reduction"`
 	SnapshotSavings    float64 `csv:"snapshot_savings" json:"snapshot_savings"`
 	ThinSavings        float64 `csv:"thin_savings" json:"thin_savings"`
+}
+
+type SpaceMetricsByFilesystem struct {
+	FileSystemID           string  `json:"file_system_id" csv:"file_system_id"`
+	Timestamp              string  `json:"timestamp" csv:"timestamp"`
+	LogicalProvisioned     float64 `json:"logical_provisioned" csv:"logical_provisioned"`
+	LogicalUsed            float64 `json:"logical_used" csv:"logical_used"`
+	ThinSavings            float64 `json:"thin_savings" csv:"thin_savings"`
+	LastLogicalProvisioned float64 `json:"last_logical_provisioned" csv:"last_logical_provisioned"`
+	LastLogicalUsed        float64 `json:"last_logical_used" csv:"last_logical_used"`
+	LastThinSavings        float64 `json:"last_thin_savings" csv:"last_thin_savings"`
+	MaxLogicalProvisioned  float64 `json:"max_logical_provisioned" csv:"max_logical_provisioned"`
+	MaxLogicalUsed         float64 `json:"max_logical_used" csv:"max_logical_used"`
+	MaxThinSavings         float64 `json:"max_thin_savings" csv:"max_thin_savings"`
+	UnreducibleData        float64 `json:"unreducible_data" csv:"unreducible_data"`
+	DataReduction          float64 `json:"data_reduction" csv:"data_reduction"`
+	ReducibleDataReduction float64 `json:"reducible_data_reduction" csv:"reducible_data_reduction"`
 }
 
 type WearMetricsByDrive struct {

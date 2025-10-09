@@ -17,13 +17,14 @@
 package generalCollector
 
 import (
+	"github.com/tidwall/gjson"
+	"powerstore-metrics-exporter/collector/bulkClient"
 	"powerstore-metrics-exporter/collector/client"
 	"time"
 
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/tidwall/gjson"
 )
 
 var metricFileSystemCollector = []string{
@@ -40,41 +41,63 @@ var metricFileSystemDescMap = map[string]string{
 }
 
 type fileSystemCollector struct {
-	client  *client.Client
-	metrics map[string]*prometheus.Desc
-	logger  log.Logger
+	client       *client.Client
+	isEnableBulk bool
+	bulkClient   *bulkClient.BulkClient
+	metrics      map[string]*prometheus.Desc
+	logger       log.Logger
 }
 
-func NewFileCollector(api *client.Client, logger log.Logger) *fileSystemCollector {
+func NewFileCollector(api *client.Client, bulkApi *bulkClient.BulkClient, logger log.Logger) *fileSystemCollector {
 	metrics := getFileSystemMetrics(api.IP)
 	return &fileSystemCollector{
-		client:  api,
-		metrics: metrics,
-		logger:  logger,
+		client:       api,
+		isEnableBulk: bulkApi.IsEnable,
+		bulkClient:   bulkApi,
+		metrics:      metrics,
+		logger:       logger,
 	}
 }
 
 func (c *fileSystemCollector) Collect(ch chan<- prometheus.Metric) {
 	level.Info(c.logger).Log("msg", "Start collecting filesystem data")
 	startTime := time.Now()
-	moduleIDArray := client.PowerstoreModuleID[c.client.IP]
-	for filesystemID, filesystemName := range moduleIDArray["filesystem"] {
-		filesystemData, err := c.client.GetFilesystemCap(filesystemID)
+	if c.isEnableBulk {
+		filesystemArray := client.PowerstoreModuleID[c.client.IP]
+		filesystemData, err := c.bulkClient.ReadCsvData("SpaceMetricsByFilesystem")
 		if err != nil {
-			level.Warn(c.logger).Log("msg", "get filesystem data error", "err", err)
-			return
+			level.Warn(c.logger).Log("msg", "get filesystem space data error", "err", err)
 		}
-		filesystemArray := gjson.Parse(filesystemData).Array()
-		if len(filesystemArray) == 0 {
-			continue
+		filesystemDataJson := gjson.Parse(filesystemData)
+		for _, data := range filesystemDataJson.Array() {
+			filesystemID := data.Get("file_system_id").String()
+			filesystemName := filesystemArray["filesystem"][filesystemID]
+			for _, metricName := range metricFileSystemCollector {
+				metricValue := data.Get(metricName)
+				metricDesc := c.metrics["filesystem"+"_"+metricName]
+				if metricValue.Exists() && metricValue.Type != gjson.Null {
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), filesystemName.String())
+				}
+			}
 		}
-
-		id := filesystemArray[len(filesystemArray)-1].Get("appliance_id").String()
-		for _, metricName := range metricFileSystemCollector {
-			metricValue := filesystemArray[len(filesystemArray)-1].Get(metricName)
-			metricDesc := c.metrics["filesystem_"+metricName]
-			if metricValue.Exists() && metricValue.Type != gjson.Null {
-				ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), filesystemName.String(), id)
+	} else {
+		moduleIDArray := client.PowerstoreModuleID[c.client.IP]
+		for filesystemID, filesystemName := range moduleIDArray["filesystem"] {
+			filesystemData, err := c.client.GetFilesystemCap(filesystemID)
+			if err != nil {
+				level.Warn(c.logger).Log("msg", "get filesystem data error", "err", err)
+				return
+			}
+			filesystemArray := gjson.Parse(filesystemData).Array()
+			if len(filesystemArray) == 0 {
+				continue
+			}
+			for _, metricName := range metricFileSystemCollector {
+				metricValue := filesystemArray[len(filesystemArray)-1].Get(metricName)
+				metricDesc := c.metrics["filesystem_"+metricName]
+				if metricValue.Exists() && metricValue.Type != gjson.Null {
+					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, metricValue.Float(), filesystemName.String())
+				}
 			}
 		}
 	}
@@ -93,7 +116,7 @@ func getFileSystemMetrics(ip string) map[string]*prometheus.Desc {
 		res["filesystem_"+metricName] = prometheus.NewDesc(
 			"powerstore_filesystem_"+metricName,
 			getFileSystemDescByType(metricName),
-			[]string{"name", "appliance_id"},
+			[]string{"name"},
 			prometheus.Labels{"IP": ip})
 	}
 	return res

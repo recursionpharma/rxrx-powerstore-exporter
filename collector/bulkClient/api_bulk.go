@@ -1,3 +1,19 @@
+/*
+ Copyright (c) 2024-2025 Dell Inc. or its subsidiaries. All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
 package bulkClient
 
 import (
@@ -29,6 +45,7 @@ var moduleToCsvFileMap = map[string]string{
 	"PerformanceMetricsByVolume":     "performance_metrics_by_volume.csv",
 	"PerformanceMetricsByVg":         "performance_metrics_by_vg.csv",
 	"SpaceMetricsByAppliance":        "space_metrics_by_appliance.csv",
+	"SpaceMetricsByFilesystem":       "space_metrics_by_file_system.csv",
 	"WearMetricsByDrive":             "wear_metrics_by_drive.csv",
 }
 
@@ -250,6 +267,16 @@ func (bc *BulkClient) ReadCsvData(moduleType string) (string, error) {
 			return string(recordsJson), nil
 		case "space_metrics_by_appliance.csv":
 			var records []*SpaceMetricsByAppliance
+			if err := gocsv.Unmarshal(tr, &records); err != nil {
+				return "", errors.New("error parsing csv file: " + err.Error())
+			}
+			recordsJson, err := json.Marshal(records)
+			if err != nil {
+				return "", errors.New("error json marshal: " + err.Error())
+			}
+			return string(recordsJson), nil
+		case "space_metrics_by_file_system.csv":
+			var records []*SpaceMetricsByFilesystem
 			if err := gocsv.Unmarshal(tr, &records); err != nil {
 				return "", errors.New("error parsing csv file: " + err.Error())
 			}

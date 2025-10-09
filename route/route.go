@@ -101,13 +101,13 @@ func Run(config *utils.Config, logger log.Logger) {
 		// The collector that registers each component in the registry
 		ClusterRegistry.MustRegister(generalCollector.NewClusterCollector(client, logger))
 		PortRegistry.MustRegister(generalCollector.NewPortCollector(client, logger))
-		FileSystemRegistry.MustRegister(generalCollector.NewFileCollector(client, logger))
 		HardwareRegistry.MustRegister(generalCollector.NewHardwareCollector(client, logger))
 		VolumeRegistry.MustRegister(generalCollector.NewVolumeCollector(client, logger))
 		ApplianceRegistry.MustRegister(generalCollector.NewApplianceCollector(client, logger))
 		NasRegistry.MustRegister(generalCollector.NewNasCollector(client, logger))
 		VolumeGroupRegistry.MustRegister(generalCollector.NewVolumeGroupCollector(client, logger))
 		CapacityRegistry.MustRegister(generalCollector.NewCapacityCollector(client, logger))
+		FileSystemRegistry.MustRegister(generalCollector.NewFileCollector(client, bc, logger))
 		// Performance data
 		ApplianceRegistry.MustRegister(generalCollector.NewMetricApplianceCollector(client, bc, logger))
 		PortRegistry.MustRegister(generalCollector.NewMetricFcPortCollector(client, bc, logger))
