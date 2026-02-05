@@ -24,13 +24,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -432,7 +432,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -531,7 +531,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -631,7 +631,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -731,7 +731,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -844,7 +844,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -943,7 +943,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1042,7 +1042,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1141,7 +1141,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1403,7 +1403,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1678,7 +1678,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1771,7 +1771,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1865,7 +1865,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1965,7 +1965,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2065,7 +2065,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2329,7 +2329,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2426,7 +2426,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2523,7 +2523,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2620,7 +2620,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2717,7 +2717,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -2918,6 +2918,579 @@
         "x": 0,
         "y": 87
       },
+      "id": 62,
+      "panels": [],
+      "title": "Filesystem",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 88
+      },
+      "id": 66,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "expr": "powerstore_metricFilesystem_avg_latency{IP=\"$IP\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "[$Appliance] Filesystem Avg Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 88
+      },
+      "id": 69,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_metricFilesystem_avg_size{IP=\"$IP\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "[$Appliance] Filesystem Total IO Size",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "iops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 95
+      },
+      "id": 68,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_metricFilesystem_avg_total_iops{IP=\"$IP\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "[$Appliance] Filesystem Total IOPS",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 95
+      },
+      "id": 67,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "expr": "powerstore_metricFilesystem_avg_total_bandwidth{IP=\"$IP\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "[$Appliance] Filesystem Total Bandwidth",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #A"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #B"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #C"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": ":1"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 102
+      },
+      "id": 60,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_filesystem_logical_provisioned{IP=\"$IP\"}",
+          "format": "table",
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_filesystem_logical_used{IP=\"$IP\"}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "powerstore_filesystem_thin_savings{IP=\"$IP\"}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "C"
+        }
+      ],
+      "title": "Filesystem",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "appliance_id",
+                "name",
+                "Value #A",
+                "Value #B",
+                "Value #C"
+              ]
+            }
+          }
+        },
+        {
+          "id": "merge",
+          "options": {}
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value #A": "Logical Provisione",
+              "Value #B": "Logical Used",
+              "Value #C": "Thin Savings",
+              "appliance_id": "Appliance ID",
+              "name": "Filesystem Name"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 108
+      },
       "id": 42,
       "panels": [],
       "title": "Hardware",
@@ -2926,7 +3499,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -3031,7 +3604,7 @@
         "h": 13,
         "w": 11,
         "x": 0,
-        "y": 88
+        "y": 109
       },
       "id": 4,
       "options": {
@@ -3140,7 +3713,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -3186,7 +3759,7 @@
         "h": 5,
         "w": 8,
         "x": 11,
-        "y": 88
+        "y": 109
       },
       "id": 50,
       "options": {
@@ -3262,7 +3835,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -3328,7 +3901,7 @@
         "h": 7,
         "w": 5,
         "x": 19,
-        "y": 88
+        "y": 109
       },
       "id": 49,
       "options": {
@@ -3401,7 +3974,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -3467,7 +4040,7 @@
         "h": 8,
         "w": 8,
         "x": 11,
-        "y": 93
+        "y": 114
       },
       "id": 48,
       "options": {
@@ -3540,7 +4113,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
@@ -3606,7 +4179,7 @@
         "h": 6,
         "w": 5,
         "x": 19,
-        "y": 95
+        "y": 116
       },
       "id": 47,
       "options": {
@@ -3682,418 +4255,60 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 101
+        "y": 122
       },
-      "id": 62,
+      "id": 71,
       "panels": [],
-      "title": "Filesystem",
+      "title": "Metro",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 102
-      },
-      "id": 66,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.6.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "expr": "powerstore_metricFilesystem_avg_latency{IP=\"$IP\"}",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "[$Appliance] Filesystem Avg Latency",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 102
-      },
-      "id": 69,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.6.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "powerstore_metricFilesystem_avg_size{IP=\"$IP\"}",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "[$Appliance] Filesystem Total IO Size",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "iops"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 109
-      },
-      "id": 68,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.6.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "powerstore_metricFilesystem_avg_total_iops{IP=\"$IP\"}",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "[$Appliance] Filesystem Total IOPS",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 109
-      },
-      "id": 67,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.6.5",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "expr": "powerstore_metricFilesystem_avg_total_bandwidth{IP=\"$IP\"}",
-          "hide": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "C"
-        }
-      ],
-      "title": "[$Appliance] Filesystem Total Bandwidth",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cf0i3qn506tq8e"
+        "uid": "ffc3ook1zwj5sc"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
-          "custom": {
-            "align": "left",
-            "cellOptions": {
-              "type": "auto"
-            },
-            "inspect": false
-          },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "text",
+                  "index": 0,
+                  "text": "Initializing"
+                },
+                "1": {
+                  "color": "yellow",
+                  "index": 1,
+                  "text": "Disengaged"
+                },
+                "2": {
+                  "color": "green",
+                  "index": 2,
+                  "text": "Engaged"
+                },
+                "3": {
+                  "color": "red",
+                  "index": 3,
+                  "text": "Remote_Witness_Invalid_Or_Unavailable"
+                },
+                "4": {
+                  "color": "red",
+                  "index": 4,
+                  "text": "Failed_To_Initialize"
+                },
+                "5": {
+                  "color": "orange",
+                  "index": 5,
+                  "text": "Unconfigure_In_Progress"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4107,147 +4322,222 @@
             ]
           }
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value #A"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "bytes"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value #B"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "bytes"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value #C"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": ":1"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 5,
+        "w": 7,
         "x": 0,
-        "y": 116
+        "y": 123
       },
-      "id": 60,
+      "id": 70,
       "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": [
-            "sum"
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
           ],
-          "show": false
+          "fields": "",
+          "values": false
         },
-        "showHeader": true
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
       "pluginVersion": "11.6.5",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
           "editorMode": "code",
-          "exemplar": false,
-          "expr": "powerstore_filesystem_logical_provisioned{IP=\"$IP\"}",
-          "format": "table",
-          "instant": true,
-          "legendFormat": "__auto",
-          "range": false,
+          "expr": "powerstore_metro_status{IP=\"10.241.219.110\"}",
+          "legendFormat": "{{IP}}",
+          "range": true,
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "powerstore_filesystem_logical_used{IP=\"$IP\"}",
-          "format": "table",
-          "hide": false,
-          "instant": true,
-          "legendFormat": "__auto",
-          "range": false,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "e0923a19-3658-40ae-92ad-e77176fdcbf7"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "powerstore_filesystem_thin_savings{IP=\"$IP\"}",
-          "format": "table",
-          "hide": false,
-          "instant": true,
-          "legendFormat": "__auto",
-          "range": false,
-          "refId": "C"
         }
       ],
-      "title": "Filesystem",
-      "transformations": [
-        {
-          "id": "filterFieldsByName",
-          "options": {
-            "include": {
-              "names": [
-                "appliance_id",
-                "name",
-                "Value #A",
-                "Value #B",
-                "Value #C"
-              ]
+      "title": "Metro Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "OK"
+                },
+                "1": {
+                  "color": "text",
+                  "index": 1,
+                  "text": "Partially_Connected"
+                },
+                "2": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "Disconnected"
+                },
+                "3": {
+                  "color": "text",
+                  "index": 3,
+                  "text": "Deleting"
+                },
+                "4": {
+                  "color": "text",
+                  "index": 4,
+                  "text": "Initializing"
+                }
+              },
+              "type": "value"
             }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
           }
         },
-        {
-          "id": "merge",
-          "options": {}
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 7,
+        "x": 7,
+        "y": 123
+      },
+      "id": 72,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
         {
-          "id": "organize",
-          "options": {
-            "excludeByName": {},
-            "indexByName": {},
-            "renameByName": {
-              "Value #A": "Logical Provisione",
-              "Value #B": "Logical Used",
-              "Value #C": "Thin Savings",
-              "appliance_id": "Appliance ID",
-              "name": "Filesystem Name"
-            }
-          }
+          "editorMode": "code",
+          "expr": "powerstore_metro_witness_status{IP=\"10.241.219.110\"}",
+          "legendFormat": "{{name}}",
+          "range": true,
+          "refId": "A"
         }
       ],
-      "type": "table"
+      "title": "Metro Witness Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ffc3ook1zwj5sc"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "OK"
+                },
+                "1": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "Disconnected"
+                },
+                "2": {
+                  "color": "text",
+                  "index": 2,
+                  "text": "Initializing"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 10,
+        "x": 14,
+        "y": 123
+      },
+      "id": 73,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.5",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "powerstore_metro_witness_conn_status{IP=\"10.241.219.110\"}",
+          "legendFormat": "{{name}}: {{node_id}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Metro Witness Connection Status",
+      "type": "stat"
     }
   ],
   "preload": false,
@@ -4258,12 +4548,12 @@
     "list": [
       {
         "current": {
-          "text": "10.244.141.112",
-          "value": "10.244.141.112"
+          "text": "10.241.219.170",
+          "value": "10.241.219.170"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "cf0i3qn506tq8e"
+          "uid": "ffc3ook1zwj5sc"
         },
         "definition": "label_values(powerstore_cluster{},IP)",
         "includeAll": false,
@@ -4284,7 +4574,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "cf0i3qn506tq8e"
+          "uid": "ffc3ook1zwj5sc"
         },
         "definition": "label_values(powerstore_appliance{},appliance_id)",
         "includeAll": false,
@@ -4308,5 +4598,5 @@
   "timezone": "",
   "title": "powerstore exporter from prometheus dashboard",
   "uid": "vt4jLZnSk2",
-  "version": 5
+  "version": 4
 }
