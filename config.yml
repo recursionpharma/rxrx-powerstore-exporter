@@ -27,14 +27,16 @@ storageList:
     user: your-first-powerstore-username
     # password：Password of the user logged in with PowerStore Manager API
     password: your-first-powerstore-password
+    # apiVersion: It is recommended to use v1 for PowerStore OS versions below 3.6, and v3 for versions 3.6 and above
     apiVersion: v3
     # apiLimit：The maximum number of components output per output by PowerStore Manger API
     apiLimit: 5000
     # bulkCollector：Whether to enable PowerStore manager bulk api to collect data
+    # This value must be set to true for PowerStore OS versions 4.1.0.0 and above. It must also be set to true if data retrieval times out due to a large number of volumes, file systems, or similar resources
     bulkCollector: false
   - ip: 10.0.0.2
     user: your-second-powerstore-username
     password: your-second-powerstore-password
-    apiVersion: v1
+    apiVersion: v3
     apiLimit: 5000
     bulkCollector: false

@@ -76,6 +76,14 @@ func (c *Client) GetVolumeGroup() (string, error) {
 	return c.getData("volume_group_list_cma_view?select=*&limit="+strconv.Itoa(c.limit), "GET", "")
 }
 
+func (c *Client) GetMetro() (string, error) {
+	return c.getData("replication_session?type=eq.Metro_Active_Active&select=*", "GET", "")
+}
+
+func (c *Client) GetWitness() (string, error) {
+	return c.getData("witness?select=*", "GET", "")
+}
+
 func (c *Client) GetPerf(id string) (string, error) {
 	var body = &RequestBody{
 		Entity:   "performance_metrics_by_appliance",

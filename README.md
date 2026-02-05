@@ -24,6 +24,10 @@ To enable HTTPS access, you need to modify three options `exporter.https.enable`
 To enable Bulk api request, you need to configure the three options `storageList.bulkCollector`, `exporter.bulkDir`, and `exporter.bulkCron` in the config.yml file.
 The utilization of the PowerStore Manager's bulk API allows for a significant enhancement in the collection speed of all performance metrics. It is required, however, that the user account for PowerStore Manager possesses a minimum permission level of "Storage Operator" (operator role not working) in order to enable this functionality.
 
+This value must be set to true for PowerStore OS versions 4.1.0.0 and above. It must also be set to true if data retrieval times out due to a large number of volumes, file systems, or similar resources.
+
+Please ensure that the bulk API data cache directory configured in the config file is pre-created.
+
 ### Docker Image
 Build the docker image first.
 ```
@@ -68,5 +72,5 @@ For Zabbix the flow would be: PowerStore(s) --> exporter --> multiple targets --
 Add ./templates/prometheus/prometheus.yml to all jobs in your Prometheus .yml config file, then restart your Prometheus instance or reload. You can update scrape interval time to support your application monitoring requirements. We use Grafana to render metrics collected by Prometheus.
 
 #### Zabbix and Grafana
-When you create a host in Zabbix, use ./templates/zabbix/zbx_exporter_tempaltes.yaml to link PowerStore(s) to the Zabbix host. We use Grafana to render metrics collected by Zabbix. You can also create dashboards in Zabbix directly.
+When you create a host in Zabbix, use ./templates/zabbix/zbx_exporter_templates.yaml to link PowerStore(s) to the Zabbix host. We use Grafana to render metrics collected by Zabbix. You can also create dashboards in Zabbix directly.
 

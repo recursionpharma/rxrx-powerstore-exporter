@@ -100,6 +100,7 @@ func Run(config *utils.Config, logger log.Logger) {
 
 		// The collector that registers each component in the registry
 		ClusterRegistry.MustRegister(generalCollector.NewClusterCollector(client, logger))
+		ClusterRegistry.MustRegister(generalCollector.NewMetroCollector(client, logger))
 		PortRegistry.MustRegister(generalCollector.NewPortCollector(client, logger))
 		HardwareRegistry.MustRegister(generalCollector.NewHardwareCollector(client, logger))
 		VolumeRegistry.MustRegister(generalCollector.NewVolumeCollector(client, logger))
