@@ -117,7 +117,8 @@ func Run(config *utils.Config, logger log.Logger) {
 		FileSystemRegistry.MustRegister(generalCollector.NewMetricFilesystemCollector(client, bc, logger))
 		VolumeRegistry.MustRegister(generalCollector.NewMetricVolumeCollector(client, bc, logger))
 		VolumeGroupRegistry.MustRegister(generalCollector.NewMetricVgCollector(client, bc, logger))
-		HardwareRegistry.MustRegister(generalCollector.NewWearMetricCollector(client, bc, logger))
+		// Disabled: WearMetricCollector causes timeouts and auth churn
+		// HardwareRegistry.MustRegister(generalCollector.NewWearMetricCollector(client, bc, logger))
 
 		metricsGroup := r.Group(fmt.Sprintf("/metrics/%s", storage.Ip))
 		{
