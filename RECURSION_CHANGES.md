@@ -27,7 +27,31 @@ This is a fork of [dell/powerstore-metrics-exporter](https://github.com/dell/pow
 - Stable operation with only 2-4 relogins during startup
 - All other metrics collect successfully
 
-### 2. Fixed Dockerfile Config Path
+### 2. Added Defensive Nil Checks in Hardware Collector (`collector/generalCollector/hardware.go`)
+
+**Problem**: When authentication fails or API rate limiting occurs during initialization, the `PowerstoreModuleID` map isn't fully populated with appliance data. The hardware collector then tries to access nil metric descriptors, causing a panic:
+```
+panic: runtime error: invalid memory address or nil pointer dereference
+at powerstore-metrics-exporter/collector/generalCollector/hardware.go:75
+```
+
+**Solution**: Added defensive nil checks before using metric descriptors:
+```go
+metricDesc := c.metrics["node"+id]
+if metricDesc == nil {
+    level.Warn(c.logger).Log("msg", "metric descriptor not found for node", "appliance_id", id, "name", nodeName)
+    continue
+}
+ch <- prometheus.MustNewConstMetric(metricDesc, ...)
+```
+
+**Impact**:
+- Prevents crash-loop when authentication or initialization fails
+- Logs warnings about missing metrics instead of panicking
+- Allows exporter to continue collecting other available metrics
+- Makes the exporter resilient to transient API failures
+
+### 3. Fixed Dockerfile Config Path
 
 **Problem**: Kubernetes mounts secrets as directories with files inside. The original Dockerfile expected config at `/powerstore_exporter/config.yml` but K8s mounts it at `/powerstore_exporter/config/config.yml`.
 
@@ -36,7 +60,7 @@ This is a fork of [dell/powerstore-metrics-exporter](https://github.com/dell/pow
 CMD ["-c","/powerstore_exporter/config/config.yml"]
 ```
 
-### 3. Build Configuration
+### 4. Build Configuration
 
 Built with:
 ```bash

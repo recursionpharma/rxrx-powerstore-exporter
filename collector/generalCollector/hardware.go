@@ -72,6 +72,10 @@ func (c *hardwareCollector) Collect(ch chan<- prometheus.Metric) {
 		state := node.Get("lifecycle_state").String()
 		if node.Exists() && node.Type != gjson.Null {
 			metricDesc := c.metrics["node"+id]
+			if metricDesc == nil {
+				level.Warn(c.logger).Log("msg", "metric descriptor not found for node", "appliance_id", id, "name", nodeName)
+				continue
+			}
 			ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, 0, nodeName, sn, state, id)
 		}
 	}
@@ -88,12 +92,20 @@ func (c *hardwareCollector) Collect(ch chan<- prometheus.Metric) {
 			stateValue := getHardwareFloatDate("lifecycle_state", state)
 			if state.Exists() && state.Type != gjson.Null {
 				metricDesc := c.metrics[types+"state"]
+				if metricDesc == nil {
+					level.Warn(c.logger).Log("msg", "metric descriptor not found for hardware", "type", types, "name", name, "appliance_id", id)
+					continue
+				}
 				ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, stateValue, name, id)
 			}
 			if hardware.Get("type").String() == "Drive" {
 				size := hardware.Get("extra_details").Get("size")
 				if size.Exists() && size.Type != gjson.Null {
 					metricDesc := c.metrics["size"]
+					if metricDesc == nil {
+						level.Warn(c.logger).Log("msg", "metric descriptor not found for drive size", "name", name, "appliance_id", id)
+						continue
+					}
 					ch <- prometheus.MustNewConstMetric(metricDesc, prometheus.GaugeValue, size.Float(), name, id, hardware.Get("extra_details").Get("drive_type").String())
 				}
 			}
